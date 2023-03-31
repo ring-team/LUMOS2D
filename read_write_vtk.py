@@ -9,7 +9,6 @@ Copyright (c) 2020 ASGA and Universite de Lorraine. All Rights Reserved.
 """@file read_write_vtk.py scripts for Paraview visualisation 
 *Add scalar field to a .vtk file """
 
-
 def build_l_sol(sol_file_path):
     """
     Create the list of scalar field values
@@ -26,7 +25,6 @@ def build_l_sol(sol_file_path):
         line = sol_file.readline()
 
     return l_sol
-
 
 def write_vtk_begin(filepath_to_read, filepath_to_write):
     """
@@ -58,7 +56,6 @@ def write_vtk_begin(filepath_to_read, filepath_to_write):
 
     return file_to_write
 
-
 def add_solution(l_sol, file_to_write, sol_name, dim):
     """
     Add scalar field property to the .vtk file
@@ -72,7 +69,6 @@ def add_solution(l_sol, file_to_write, sol_name, dim):
     for i in l_sol:
         file_to_write.write(str(i) + "\n")
 
-
 def write_vtk_with_sol(filepath_to_read, filepath_to_write, l_sol):
     """
     Write the scalar field property in .vtk file
@@ -82,7 +78,6 @@ def write_vtk_with_sol(filepath_to_read, filepath_to_write, l_sol):
     """
     file_to_write = write_vtk_begin(filepath_to_read, filepath_to_write)
     add_solution(l_sol, file_to_write, "Distance", 1)
-
 
 def write_vtk_sol(filepath_vtk_to_read, filepath_sol_to_read, filepath_vtk_to_write):
     """
@@ -94,7 +89,6 @@ def write_vtk_sol(filepath_vtk_to_read, filepath_sol_to_read, filepath_vtk_to_wr
     l_sol = build_l_sol(filepath_sol_to_read)
     write_vtk_with_sol(filepath_vtk_to_read, filepath_vtk_to_write, l_sol)
     print("Writing VTK file -- DONE")
-
 
 if __name__ == '__main__':
     file_to_read = "/home/legentil/Test_jupyter/surf1_init_ref.o.vtk"

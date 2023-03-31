@@ -7,7 +7,6 @@ Copyright (c) 2020 ASGA and Universite de Lorraine. All Rights Reserved.
 
  """
 
-
 def RepresentsInt(number):
     """
     Test if a number represents an number
@@ -19,7 +18,6 @@ def RepresentsInt(number):
         return True
     except ValueError:
         return False
-
 
 def write_header(file_initial_mesh, file_new_mesh):
     """
@@ -50,7 +48,6 @@ def write_header(file_initial_mesh, file_new_mesh):
 
     return vertices_number
 
-
 def delete_vertices_tag(file_init_mesh, file_new_mesh, vertices_number):
     """
     Write mesh vertices from gmsh output .mesh file. There is a file format problem. This code delete a vertice tag from
@@ -67,7 +64,6 @@ def delete_vertices_tag(file_init_mesh, file_new_mesh, vertices_number):
 
         line = " ".join(split_line)
         file_new_mesh.write(line)
-
 
 def write_corners(file_init_mesh, file_new_mesh):
     """
@@ -169,7 +165,6 @@ def write_end_file(file_init_mesh, file_new_file):
 
     file_new_file.write("End")
 
-
 def write_2D_mesh_req_file(init_mesh_file_path, new_mesh_file_path):
     """
     Write 2d .mesh file with required edges
@@ -188,7 +183,6 @@ def write_2D_mesh_req_file(init_mesh_file_path, new_mesh_file_path):
 
     file_init_mesh.close()
     file_new_file.close()
-
 
 def write_2D_mesh_file_gmsh(init_mesh_file_path, new_mesh_file_path):
     """
@@ -209,8 +203,6 @@ def write_2D_mesh_file_gmsh(init_mesh_file_path, new_mesh_file_path):
 
     file_init_mesh.close()
     file_new_file.close()
-
-
 
 
 if __name__ == '__main__':
